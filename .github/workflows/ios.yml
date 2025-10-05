@@ -1,4 +1,4 @@
-name: Build iOS IPA (No Signing)
+name: Build iOS Archive
 
 on:
   push:
@@ -31,8 +31,8 @@ jobs:
       - name: Build iOS archive
         run: flutter build ipa --no-codesign
 
-      - name: Upload IPA artifact
+      - name: Upload archive artifact
         uses: actions/upload-artifact@v4
         with:
-          name: ios-ipa
-          path: build/ios/ipa/*.ipa
+          name: ios-archive
+          path: build/ios/archive/Runner.xcarchive
