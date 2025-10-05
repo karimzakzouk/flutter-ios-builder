@@ -16,7 +16,7 @@ jobs:
       - name: Setup Flutter with cache
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.27.0'
+          flutter-version: '3.32.0'  # Changed from 3.27.0
           cache: true
 
       - name: Verify Flutter installation
