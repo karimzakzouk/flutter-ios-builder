@@ -16,7 +16,7 @@ jobs:
       - name: Setup Flutter with cache
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: 'stable'  # Changed from 3.27.0
+          channel: 'stable'
           cache: true
 
       - name: Verify Flutter installation
