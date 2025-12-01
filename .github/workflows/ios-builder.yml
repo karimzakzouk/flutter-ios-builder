@@ -91,11 +91,6 @@ jobs:
           cd devops
           git checkout -q ${DEVOPS_BRANCH}
 
-      - name: Install CocoaPods
-        run: |
-          sudo gem install cocoapods
-          pod repo update
-          pod install
 
       - name: Setup Flutter
         uses: subosito/flutter-action@v2
@@ -108,6 +103,12 @@ jobs:
           cd app/lam7a
           flutter pub get
 
+      - name: Install CocoaPods
+        run: |
+          sudo gem install cocoapods
+          pod repo update
+          pod install
+          
       - name: Execute build script
         env:
           COMMIT_TAG: ${{ steps.vars.outputs.sha_short }}
