@@ -103,6 +103,14 @@ jobs:
           cd app/lam7a
           flutter pub get
 
+      - name: Regenerate iOS Podfile
+        run: |
+          cd app/lam7a/ios
+          rm -f Podfile Podfile.lock
+          cd ..
+          flutter create --platforms=ios .
+          echo "✅ Podfile regenerated"
+
       - name: Execute build script
         env:
           COMMIT_TAG: ${{ steps.vars.outputs.sha_short }}
