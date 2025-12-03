@@ -103,12 +103,6 @@ jobs:
           cd app/lam7a
           flutter pub get
 
-      - name: Install CocoaPods
-        run: |
-          sudo gem install cocoapods
-          pod repo update
-          pod install
-          
       - name: Execute build script
         env:
           COMMIT_TAG: ${{ steps.vars.outputs.sha_short }}
